@@ -13,6 +13,7 @@
   <url>https://www.oolong.cc</url>
   <modules>
     <module>customer</module>
+      <module>fraud</module>
   </modules>
 
   <properties>

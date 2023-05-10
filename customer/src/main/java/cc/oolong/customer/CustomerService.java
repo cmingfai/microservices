@@ -1,4 +1,4 @@
-package cc.oolong;
+package cc.oolong.customer;
 
 import org.springframework.stereotype.Service;
 
