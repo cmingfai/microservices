@@ -1,4 +1,5 @@
 # microservices
-# TODO: line 1
-# TODO: line 2
-# TODO: line 3
+## Rest APIs developed using Spring Boot 3
+## RestTemplate for microservice communication
+## Open Feign for refactoring and sharing microservice calls
+## Micrometer and Distributed Tracing for Spring Boot 3
