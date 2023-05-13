@@ -38,18 +38,18 @@ public class CustomerService {
         }
 
         // send notification
-        String message = "Hi %s, Your account is now registered."
+        String message = "Hi %s, your account is now registered."
                 .formatted(customer.getFirstName());
         NotificationRequest notificationRequest = new NotificationRequest(
                 customer.getId(),
                 customer.getEmail(),
                 message);
 
-//        this.notificationClient.sendNotification(notificationRequest);
-         this.rabbitMQMessageProducer.publish(
-                 notificationRequest,
-                 "internal.exchange",
-                 "internal.notification.routing-key");
+        this.notificationClient.sendNotification(notificationRequest);
+//         this.rabbitMQMessageProducer.publish(
+//                 notificationRequest,
+//                 "internal.exchange",
+//                 "internal.notification.routing-key");
 
     }
 }
