@@ -9,6 +9,7 @@ import reactor.netty.http.client.HttpClient;
 public class ApiGatewayConfig {
     @Bean
     public HttpClient httpClient() {
-        return HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
+        return HttpClient.create().resolver(
+                DefaultAddressResolverGroup.INSTANCE);
     }
 }
