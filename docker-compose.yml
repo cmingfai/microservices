@@ -3,6 +3,7 @@ services:
     container_name: postgres
     image: postgres
     environment:
+      TZ: Asia/Hong_Kong
       POSTGRES_USER: amigoscode
       POSTGRES_PASSWORD: password
       PGDATA: /data/postgres
@@ -18,6 +19,7 @@ services:
     container_name: pgadmin
     image: dpage/pgadmin4
     environment:
+      TZ: Asia/Hong_Kong
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: 'False'
@@ -32,6 +34,8 @@ services:
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
+    environment:
+      TZ: "Asia/Hong_Kong"
     ports:
       - "9411:9411"
     networks:
@@ -40,6 +44,8 @@ services:
   rabbitmq:
     image: rabbitmq:3.11.15-management-alpine
     container_name: rabbitmq
+    environment:
+      TZ: "Asia/Hong_Kong"
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -52,6 +58,7 @@ services:
     ports:
       - "8761:8761"
     environment:
+      - TZ=Asia/Hong_Kong
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - spring
@@ -64,6 +71,7 @@ services:
     ports:
       - "8083:8083"
     environment:
+      - TZ=Asia/Hong_Kong
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - spring
@@ -77,6 +85,7 @@ services:
     ports:
       - "8080:8080"
     environment:
+      - TZ=Asia/Hong_Kong
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - spring
@@ -93,6 +102,7 @@ services:
     ports:
       - "8081:8081"
     environment:
+      - TZ=Asia/Hong_Kong
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - spring
@@ -109,6 +119,7 @@ services:
     ports:
       - "8082:8082"
     environment:
+      - TZ=Asia/Hong_Kong
       - SPRING_PROFILES_ACTIVE=docker
     networks:
       - spring
