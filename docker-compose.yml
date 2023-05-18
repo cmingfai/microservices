@@ -52,32 +52,32 @@ services:
     networks:
       - spring
 
-  eureka-server:
-    image: cmingfai/eureka-server:latest
-    container_name: eureka-server
-    ports:
-      - "8761:8761"
-    environment:
-      - TZ=Asia/Hong_Kong
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-    depends_on:
-      - zipkin
+#  eureka-server:
+#    image: cmingfai/eureka-server:latest
+#    container_name: eureka-server
+#    ports:
+#      - "8761:8761"
+#    environment:
+#      - TZ=Asia/Hong_Kong
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
 
-  api-gateway:
-    image: cmingfai/api-gateway:latest
-    container_name: api-gateway
-    ports:
-      - "8083:8083"
-    environment:
-      - TZ=Asia/Hong_Kong
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-      - eureka-server
+#  api-gateway:
+#    image: cmingfai/api-gateway:latest
+#    container_name: api-gateway
+#    ports:
+#      - "8083:8083"
+#    environment:
+#      - TZ=Asia/Hong_Kong
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#      - eureka-server
 
   customer:
     image: cmingfai/customer:latest
@@ -92,7 +92,7 @@ services:
       - postgres
     depends_on:
       - zipkin
-      - eureka-server
+#      - eureka-server
       - postgres
       - rabbitmq
 
@@ -109,7 +109,7 @@ services:
       - postgres
     depends_on:
       - zipkin
-      - eureka-server
+#      - eureka-server
       - postgres
       - rabbitmq
 
@@ -126,7 +126,7 @@ services:
       - postgres
     depends_on:
       - zipkin
-      - eureka-server
+#      - eureka-server
       - postgres
       - rabbitmq
 
