@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer
+  labels:
+    app: customer
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: customer
+      labels:
+        app: customer
+    spec:
+      containers:
+        - name: customer
+          image: cmingfai/customer:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: kube
+            - name: SPRING_DATASOURCE_USERNAME
+              value:
+            - name: SPRING_DATASOURCE_PASSWORD
+              value:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/customer
+            - name: TZ
+              value: Asia/Hong_Kong
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: customer
+
+
