@@ -22,9 +22,9 @@ spec:
             - name: SPRING_PROFILES_ACTIVE
               value: kube
             - name: SPRING_DATASOURCE_USERNAME
-              value:
+              value: username
             - name: SPRING_DATASOURCE_PASSWORD
-              value:
+              value: password
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres:5432/customer
             - name: TZ

@@ -19,6 +19,7 @@
       <module>notification</module>
       <module>api-gateway</module>
       <module>amqp</module>
+    <module>kafka</module>
   </modules>
 
   <properties>
