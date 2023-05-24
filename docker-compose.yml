@@ -79,56 +79,56 @@ services:
 #      - zipkin
 #      - eureka-server
 
-  customer:
-    image: cmingfai/customer:latest
-    container_name: customer
-    ports:
-      - "8080:8080"
-    environment:
-      - TZ=Asia/Hong_Kong
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - zipkin
-#      - eureka-server
-      - postgres
-      - rabbitmq
+#   customer:
+#     image: cmingfai/customer:latest
+#     container_name: customer
+#     ports:
+#       - "8080:8080"
+#     environment:
+#       - TZ=Asia/Hong_Kong
+#       - SPRING_PROFILES_ACTIVE=docker
+#     networks:
+#       - spring
+#       - postgres
+#     depends_on:
+#       - zipkin
+# #      - eureka-server
+#       - postgres
+#       - rabbitmq
 
-  fraud:
-    image: cmingfai/fraud:latest
-    container_name: fraud
-    ports:
-      - "8081:8081"
-    environment:
-      - TZ=Asia/Hong_Kong
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - zipkin
-#      - eureka-server
-      - postgres
-      - rabbitmq
-
-  notification:
-    image: cmingfai/notification:latest
-    container_name: notification
-    ports:
-      - "8082:8082"
-    environment:
-      - TZ=Asia/Hong_Kong
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - zipkin
-#      - eureka-server
-      - postgres
-      - rabbitmq
+#   fraud:
+#     image: cmingfai/fraud:latest
+#     container_name: fraud
+#     ports:
+#       - "8081:8081"
+#     environment:
+#       - TZ=Asia/Hong_Kong
+#       - SPRING_PROFILES_ACTIVE=docker
+#     networks:
+#       - spring
+#       - postgres
+#     depends_on:
+#       - zipkin
+# #      - eureka-server
+#       - postgres
+#       - rabbitmq
+#
+#   notification:
+#     image: cmingfai/notification:latest
+#     container_name: notification
+#     ports:
+#       - "8082:8082"
+#     environment:
+#       - TZ=Asia/Hong_Kong
+#       - SPRING_PROFILES_ACTIVE=docker
+#     networks:
+#       - spring
+#       - postgres
+#     depends_on:
+#       - zipkin
+# #      - eureka-server
+#       - postgres
+#       - rabbitmq
 
 networks:
   postgres:
